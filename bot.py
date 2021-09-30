@@ -1,5 +1,5 @@
 #Desarrollando Ncloud Manager
-
+#la pinga mia 
 
 
 import owncloud
