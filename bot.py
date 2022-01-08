@@ -109,14 +109,14 @@ def uploadToCloud(update,message,file_name,file_size,evidence,itemid=None):
                     infotext = '<b>Informacion : </b>\n'
                     infotext+= '<b>Nombre : '+file_name+'</b>\n'
                     infotext+= '<b>Tamaño : '+sizeof_fmt(file_size)+'</b>\n'
-                    infotext+= '<b>Estado : ⏫ Subiendo a la Nube ☁...</b>\n'
+                    infotext+= '<b>Estado : ⏫☁ Subiendo a la Nube ☁⏫...</b>\n'
                     editHtml(message,infotext)
 
                     client = MoodleClient.MoodleClient(config.CREDENTIALS['username'],config.CREDENTIALS['password'])
                     loged = client.login()
                     if loged:
                         fileid = client.upload_file(file_name,evidence,itemid)
-                        infotext = '<b>Proceso Finalizado!</b>'
+                        infotext = '<b>⏫☁Archivos subidos☁⏫</b>'
                         editHtml(message,infotext)
                         return fileid
                     else:
@@ -145,7 +145,7 @@ def ddl(update,url,session=None,filename='',message=None):
                 infotext = '<b>Informacion : </b>\n'
                 infotext+= '<b>Nombre : '+file_name+'</b>\n'
                 infotext+= '<b>Tamaño : '+sizeof_fmt(file_size)+'</b>\n'
-                infotext+= '<b>Estado : 📥Preparando Descarga</b>\n'
+                infotext+= '<b>Estado : 📥Preparando Descarga📥</b>\n'
                 editHtml(message,infotext)
 
                 file_wr = open(file_name,'wb')
@@ -172,7 +172,7 @@ def ddl(update,url,session=None,filename='',message=None):
                         progres_text = text_progres(chunk_por,total)
                         infotext = '<b>Informacion : </b>\n'
                         infotext+= '<b>Nombre : '+file_name+'</b>\n'
-                        infotext+= '<b>Estado : 📥Descargando...</b>\n'
+                        infotext+= '<b>Estado : 📥Descargando📥</b>\n'
                         infotext+= '<b>'+'Progreso:\n'+str(progres_text)+'\nDescargado: '+str(round(float(chunk_por) / 1024 / 1024, 2))+' MB\nTotal: ' +str(round(total / 1024 / 1024, 2))+ ' MB'+'</b>\n'
                         infotext+= '<b>'+'Velocidad: '+sizeof_fmt(size_per_second)+' /s</b>\n'
                         try:
