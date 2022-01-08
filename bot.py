@@ -345,7 +345,7 @@ def process_msg(update,context):
         elif '/sc' in msg:
             sc = str(msg).replace('/sc ','')
             config.MAX_ZIP_SIZE = int(sc)
-            sendHtml(update,'<b>config.MAX_ZIP_SIZE = '+sc+'</b>')
+            sendHtml(update,'<b>Tamaño de archivos .zip = '+sc+'</b>')
         elif '/acc' in msg:
             username = str(msg).replace('/acc ','')
             config.ACCES_USERS.append(username)
