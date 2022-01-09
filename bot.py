@@ -239,7 +239,7 @@ def delFiles(update):
             fullname = get_url_file_name(ff['url'],'').split('?')[0]
             editHtml(message,'<b>Eliminando '+fullname+'...</b>')
             client.delteFile(ff['fullname'])
-            editHtml(message,'<b>'+fullname+' Eliminado!</b>')
+            editHtml(message,'<b>❌'+fullname+' Eliminado❌</b>')
     else:
         infotext = '<b>Error :</b>\n'
         infotext+= '<b>Verifique sus credenciales...</b>\n'
@@ -259,7 +259,7 @@ def megadl(update,megaurl):
                 infotext = '<b>Informacion :</b>\n'
                 infotext+= '<b>Nombre : '+file_name+'</b>\n'
                 infotext+= '<b>Tamaño : '+size+'</b>\n'
-                infotext+= '<b>Estado : 📥Descargando...</b>\n'
+                infotext+= '<b>Estado : 📥Descargando📥</b>\n'
                 editHtml(message,infotext)
 
                 megadl.download_url(megaurl,dest_filename=file_name)
@@ -267,7 +267,7 @@ def megadl(update,megaurl):
                 infotext = '<b>Informacion : </b>\n'
                 infotext+= '<b>Nombre : '+file_name+'</b>\n'
                 infotext+= '<b>Tamaño : '+sizeof_fmt(file_size)+'</b>\n'
-                infotext+= '<b>Estado : 📥Preparando...</b>\n'
+                infotext+= '<b>Estado : 📥Preparando📥</b>\n'
                 editHtml(message,infotext)
 
                 procesUploadFile(update,message,file_name,file_size)
@@ -310,13 +310,13 @@ def process_msg(update,context):
         msg = update.message.text
         zipfile.files.clear()
         if '/start' in msg:
-            reply_text = '<b>Bienvenido a TFreeFile</b>\n\n'
-            reply_text+= '<b>Comandos:</b>\n'
-            reply_text+= '<b>/files - muestra la (lista) de archivos</b>\n'
-            reply_text+= '<b>/del (index) - borra el archivo index de la (lista)</b>\n'
-            reply_text+= '<b>/delall - borra todos los archivos (lista)</b>\n'
-            reply_text+= '<b>/sc (Tamaño) - configura el tamaño de las partes (zip)</b>\n\n'
-            reply_text+= '<b>Soporte (Url):</b>\n'
+            reply_text = '<b>🤖☁️Bienvenido a NCloud-Manager-Bot☁️🤖</b>\n\n'
+            reply_text+= '<b>🤖Comandos🤖</b>\n'
+            reply_text+= '<b>/files - 📄Muestra la (lista) de archivos📄</b>\n'
+            reply_text+= '<b>/del (index) - ❌Borra el archivo index de la (lista)❌</b>\n'
+            reply_text+= '<b>/delall - ❌Borra todos los archivos (lista)❌</b>\n'
+            reply_text+= '<b>/sc (Tamaño) - ⚙️Configura el tamaño de las partes (zip)⚙️</b>\n\n'
+            reply_text+= '<b>🔗Soporte (Url)🔗:</b>\n'
             reply_text+= '<b>#mega #mediafire #youtube #googlerive #directurl</b>\n'
             sendHtml(update,reply_text)
         elif '/vdirect' in msg:
@@ -345,7 +345,7 @@ def process_msg(update,context):
         elif '/sc' in msg:
             sc = str(msg).replace('/sc ','')
             config.MAX_ZIP_SIZE = int(sc)
-            sendHtml(update,'<b>Tamaño de archivos .zip = '+sc+'</b>')
+            sendHtml(update,'<b>📦Tamaño de archivos Zip📦 = '+sc+' MB</b>')
         elif '/acc' in msg:
             username = str(msg).replace('/acc ','')
             config.ACCES_USERS.append(username)
