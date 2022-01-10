@@ -11,12 +11,12 @@ class MoodleClient(object):
         self.username = user
         self.password = passw
         self.session = requests.Session()
-        self.path = 'https://eva.uo.edu.cu/'
+        self.path = 'https://evea.uh.cu/'
         self.userdata = None
         self.userid = ''
 
     def getsession(self):
-        return self.session    
+        return self.session
 
     def getUserData(self):
         tokenUrl = self.path+'login/token.php?service=moodle_mobile_app&username='+self.username+'&password='+self.password
