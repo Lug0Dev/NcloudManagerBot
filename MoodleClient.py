@@ -153,10 +153,10 @@ class MoodleClient(object):
 
         upload_data = {
             'title':(None,''),
-            'author':(None,'ObysoftDev'),
+            'author':(None,'Lug0Dev'),
             'license':(None,'allrightsreserved'),
             'itemid':(None,query['itemid']),
-            'repo_id':(None,5),
+            'repo_id':(None,4),
             'p':(None,''),
             'page':(None,''),
             'env':(None,query['env']),
