@@ -13,7 +13,7 @@ import googledrive
 from mega import Mega
 import zipfile
 import youtube_dl
-import vdirect
+import re
 
 def sendHtml(update,html):
     return update.message.reply_text(html, parse_mode=ParseMode.HTML)
@@ -66,8 +66,8 @@ def text_progres(index,max):
 		index_make = 1
 		make_text += '\n['
 		while(index_make<21):
-			if porcent >= index_make * 5: make_text+='█'
-			else: make_text+='░'
+			if porcent >= index_make * 5: make_text+='●'
+			else: make_text+='○'
 			index_make+=1
 		make_text += ']\n'
 		return make_text
@@ -202,7 +202,6 @@ def sendFiles(update,account):
         i = 0
         for item in list:
             infotext += '<b>/del_'+str(i)+'</b>\n'
-            infotext += '<b>/vdirect_'+str(i)+'</b>\n'
             infotext += '<b>'+item['name']+':</b>\n'
             for file in item['files']:
                 infotext += '<a href="'+file['url']+'">\t'+file['name']+'</a>\n'
