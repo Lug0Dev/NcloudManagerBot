@@ -1,0 +1,15 @@
+{
+"name": "Ncloud Manager",
+"description": "Bot de telegram para realizar descargas gratuitas desde Cuba",
+"env": {
+    "TOKEN": {
+    "description": "Token de acceso al Bot",
+    "value": ""
+    }
+    },
+"buildpacks": [
+    {
+        "url": "heroku/python"
+    }
+    ]
+}
