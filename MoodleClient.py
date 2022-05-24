@@ -156,7 +156,7 @@ class MoodleClient(object):
             'author':(None,'Lug0Dev'),
             'license':(None,'allrightsreserved'),
             'itemid':(None,query['itemid']),
-            'repo_id':(None,4),
+            'repo_id':(None,5),
             'p':(None,''),
             'page':(None,''),
             'env':(None,query['env']),
