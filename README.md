@@ -1,11 +1,1 @@
-# Bot en pleno desarollo
- 
- Ahora mismo el bot corre bajo comandos en próximas actualizaciones se podrá usar con botones Inline y Keyboards
-
- ## Commandos disponibles
-
-/start - Inicia el bot 
-
-/login -- Accede a la cuenta
- 
-/logout -- Cierra la sesión 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Lug0Dev/NcloudManagerBot)
